@@ -14,13 +14,21 @@ if age < 0:
 
 print("Age:", age)
 
-if age < 13 :
-    cat = "child"
+
+if age < 13:
+    cat = "Child"
+elif age < 20:
+    cat = "Teenager"
 else:
-    if 13 < age < 20:
-        cat = "teenager"
-    else:
-        cat = "grown-up"
+    cat = "Grown-up"
+
+#if age < 13 :
+#    cat = "child"
+#else:
+#    if 13 <= age < 20:
+#        cat = "teenager"
+#    else:
+#        cat = "grown-up"
 
 print("Category:", cat)
 
