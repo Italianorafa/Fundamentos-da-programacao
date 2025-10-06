@@ -17,13 +17,12 @@ T = float(input("Temperature (K)? "))
 P = float(input("Pressure (kPa)? "))
 
 # Determine the phase. (This is wrong. Fix to match the phase diagram.)
-
-if P > 50.0:
-    if T < 400.0:
-        phase = "SOLID"
-    else:
-        phase = "LIQUID"
-
+if (P>50 and T < 400) or (P<50 and T<400 and P/T > 45):
+    phase = "SOLID"
+elif P>50 and T>400:
+    phase = "LIQUID"
+else:
+    phase = "GAS"
 
 #if P > 50.0:
 #    phase = "SOLID"
@@ -33,5 +32,5 @@ if P > 50.0:
 #    phase = "GAS"
 
 # Output.  (There's a subtle syntax error here!)
-print("At {} K and {} kPa, Kryptonite is in the {} phase.".format(T, P, phase))
+print("At {:.1f} K and {:.3f} kPa, Kryptonite is in the {} phase.".format(T, P, phase))
 
